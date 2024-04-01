@@ -26,6 +26,25 @@ android {
             )
         }
     }
+
+    flavorDimensions += "plan"
+
+    productFlavors {
+        create("free") {
+            // 無料版
+            dimension = "plan"
+            applicationIdSuffix = ".free" // アプリケーションIDが com.example.nandemocatchup.free となり、GooglePlayStoreで別々のアプリとして出せる。
+            versionNameSuffix = "-free"
+        }
+
+        create("pro") {
+            // 有料版
+            dimension = "plan"
+            applicationIdSuffix = ".pro" // アプリケーションIDが com.example.nandemocatchup.pro となり、GooglePlayStoreで別々のアプリとして出せる。
+            versionNameSuffix = "-pro"
+        }
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
